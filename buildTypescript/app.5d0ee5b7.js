@@ -65,18 +65,9 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-var func = function func() {};
-var NUM = 45;
-var arr = [1, 2, 4];
-var arrB = arr.map(function (item) {
-  return item * 2;
-});
-console.log('new Set(arrB)', new Set(arrB));
+throw new Error("Module build failed: TypeError: Cannot read property 'afterCompile' of undefined\n    at successfulTypeScriptInstance (E:\\webstorm dictionary\\myVuePro\\webpack-edu\\buildTypescript\\node_modules\\ts-loader\\dist\\instances.js:167:28)\n    at Object.getTypeScriptInstance (E:\\webstorm dictionary\\myVuePro\\webpack-edu\\buildTypescript\\node_modules\\ts-loader\\dist\\instances.js:51:12)\n    at Object.loader (E:\\webstorm dictionary\\myVuePro\\webpack-edu\\buildTypescript\\node_modules\\ts-loader\\dist\\index.js:16:41)");
 
 /***/ })
 /******/ ]);

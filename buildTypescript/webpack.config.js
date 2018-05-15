@@ -1,6 +1,6 @@
 module.exports={
     entry:{
-        app:'./app.js'
+        app:'./src/app.ts'
     },
     output:{
         filename:'[name].[hash:8].js'
@@ -8,10 +8,10 @@ module.exports={
     module:{
         rules:[
             {
-                test:/\.js$/,
+                test:/\.tsx?$/,
                 // use:'babel-loader',
                 use:{
-                    loader:'babel-loader',
+                    loader:'ts-loader',
                     // options:{
                     //     presets:[
                     //         ['babel-preset-env',{
@@ -24,8 +24,8 @@ module.exports={
                     //     }]
                     // ]
                     // }
-                },
-                exclude:'/node_modules/' //排除
+                }
+                // exclude:'/node_modules/' //排除
             }
         ]
     }

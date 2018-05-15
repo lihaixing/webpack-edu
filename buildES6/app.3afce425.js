@@ -70,10 +70,13 @@
 "use strict";
 
 
-let func = () => {};
-const NUM = 45;
-let arr = [1, 2, 4];
-let arrB = arr.map(item => item * 2);
+var func = function func() {};
+var NUM = 45;
+var arr = [1, 2, 4];
+var arrB = arr.map(function (item) {
+  return item * 2;
+});
+arrB.includes(8);
 console.log('new Set(arrB)', new Set(arrB));
 
 /***/ })
