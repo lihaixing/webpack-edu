@@ -1,13 +1,17 @@
 {
-    "comilerOptions":{
-        "module":"conmmonjs",
-        "target":"es5",
-        "allowJs":true
+    "comilerOptions": {
+        "module": "conmmonjs",
+        "target": "es5",
+        "allowJs": true,
+        "typeRoots": [
+            "./node_modules/@type",
+            "./typings/modules"
+        ]
     },
-    "include":[
+    "include": [
         "./src/*"
     ],
-    "exclude":[
+    "exclude": [
         "./node_modules"
     ]
 }
