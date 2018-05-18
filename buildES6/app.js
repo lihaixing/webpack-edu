@@ -1,4 +1,4 @@
-// import 'babel-polyfill'
+import 'babel-polyfill'
 
 let func=()=>{};
 const NUM=45;
