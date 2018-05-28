@@ -10,8 +10,10 @@ module.exports={
         // 'vendor':['lodash']
     },
     output:{
-        // _dirname 表示当前运行的路径
+        // _dirname 表示当前运行的路径 path是要打包到的路径
         path:path.resolve(__dirname,'./dist'),
+        // 加载文件时的路径
+        publicPath:'./dist/',
         filename:'[name].bundle.js',
         chunkFilename:'[name].chunk.js'
     },

@@ -1,15 +1,22 @@
 // 将moduleA 从subpageA和subpageB中提取出来
 require.include('./moduleA')
-
+var page = 'subpageA'
 // 将subPageA 和 subPageB单独分离出来 但两个里面都有moduleA
 if(page === 'subpageA'){
+    // 预加载
     require.ensure(['./subPageA'],function(){
+        // 执行
         var subpageA=require('./subPageA')
     },'subPageA')
-}else if(page === 'subpageB'){
-    require.ensure(['./subPageB'],function(){
-        var subpageB=require('./subPageB')
-    },'subPageB')
+}else if(page === 'subpageD'){
+    // require.ensure(['./subPageB'],function(){
+    //     var subpageB=require('./subPageB')
+    // },'subPageB')
+
+    // import不仅加载还执行（动态）; 运用魔法注释为打包起名; 如果subpageA和subpageB打包名字相同，会打包到一个文件中
+    import(/* webpackChunkName:'subPageB' */'./subPageB').then(function (subPageB) {
+        console.log(subPageB)
+    })
 }
 // import './subPageA'
 // import './subPageB'

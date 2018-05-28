@@ -136,13 +136,13 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "./dist/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -155,24 +155,30 @@
 /***/ }),
 /* 1 */,
 /* 2 */,
-/* 3 */,
-/* 4 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // 将moduleA 从subpageA和subpageB中提取出来
 undefined/*! require.include ./moduleA */
-
+var page = 'subpageA'
 // 将subPageA 和 subPageB单独分离出来 但两个里面都有moduleA
 if(page === 'subpageA'){
+    // 预加载
     __webpack_require__.e/* require.ensure */(2).then((function(){
+        // 执行
         var subpageA=__webpack_require__(1)
     }).bind(null, __webpack_require__)).catch(__webpack_require__.oe)
-}else if(page === 'subpageB'){
-    __webpack_require__.e/* require.ensure */(1).then((function(){
-        var subpageB=__webpack_require__(2)
-    }).bind(null, __webpack_require__)).catch(__webpack_require__.oe)
+}else if(page === 'subpageD'){
+    // require.ensure(['./subPageB'],function(){
+    //     var subpageB=require('./subPageB')
+    // },'subPageB')
+
+    // import不仅加载还执行（动态）; 运用魔法注释为打包起名; 如果subpageA和subpageB打包名字相同，会打包到一个文件中
+    __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 4)).then(function (subPageB) {
+        console.log(subPageB)
+    })
 }
 // import './subPageA'
 // import './subPageB'
@@ -180,7 +186,7 @@ if(page === 'subpageA'){
 
 // 代码分割 将第三方依赖分离了出来
 __webpack_require__.e/* require.ensure */(0).then((function(){
-    var _ = __webpack_require__(3)
+    var _ = __webpack_require__(2)
     _.join(['1','2'],'3')
 }).bind(null, __webpack_require__)).catch(__webpack_require__.oe)
 /* harmony default export */ __webpack_exports__["default"] = ('pageA');
