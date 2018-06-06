@@ -1,5 +1,9 @@
-// 将moduleA 从subpageA和subpageB中提取出来
-require.include('./moduleA')
+// import './subPageA'
+// import './subPageB'
+import * as _ from 'lodash'
+
+// 将moduleA 从subpageA和subpageB中提取出来,放到pageA中
+// require.include('./moduleA')
 var page = 'subpageA'
 // 将subPageA 和 subPageB单独分离出来 但两个里面都有moduleA
 if(page === 'subpageA'){
@@ -18,13 +22,10 @@ if(page === 'subpageA'){
         console.log(subPageB)
     })
 }
-// import './subPageA'
-// import './subPageB'
-// import * as _ from 'lodash'
 
-// 代码分割 将第三方依赖分离了出来
-require.ensure(['lodash'],function(){
-    var _ = require('lodash')
-    _.join(['1','2'],'3')
-},'vender')
+// 代码分割 将第三方依赖分离了出来 这是异步
+// require.ensure(['lodash'],function(){
+//     var _ = require('lodash')
+//     _.join(['1','2'],'3')
+// },'vender')
 export default 'pageA'

@@ -5,9 +5,9 @@ var path=require('path')
 module.exports={
     entry:{
         'pageA':'./src/pageA',
-        // 'pageB':'./src/pageB',
+        'pageB':'./src/pageB',
         // 插件
-        // 'vendor':['lodash']
+        'vendor':['lodash']
     },
     output:{
         // _dirname 表示当前运行的路径 path是要打包到的路径
@@ -19,6 +19,12 @@ module.exports={
     },
     plugins:[
         // 合起来写
+        new webpack.optimize.CommonsChunkPlugin({
+            async:'async-common',
+            children:true,
+            minChunks:2
+        })
+        // ,
         // new webpack.optimize.CommonsChunkPlugin({
         //     names:['vendor','manifest'],
         //     minChunks:Infinity
