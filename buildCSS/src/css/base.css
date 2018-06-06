@@ -2,3 +2,13 @@
 html {
     background: red;
 }
+.box{
+    /*从其他文件继承样式，此代码会在base代码之前加载，所以要放在前面*/
+    composes: bigBox from './common.css';
+
+    border-radius:4px;
+    height: 200px;
+    width: 200px;
+    background:#ccc;
+    color:red;
+}
