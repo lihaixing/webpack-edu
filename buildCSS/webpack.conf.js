@@ -74,6 +74,10 @@ module.exports = {
             }
         ]
     },
+    // 防止打包报错
+    node: {
+        fs: 'empty'
+    },
     plugins: [
         new ExtractTextWebpackPlugin({
             filename: '[name].min.css'
