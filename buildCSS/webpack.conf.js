@@ -80,7 +80,7 @@ module.exports = {
     },
     plugins: [
         new ExtractTextWebpackPlugin({
-            filename: '[name].min.css'
+            filename: '[name]Conf.min.css'
         })
     ]
 }
