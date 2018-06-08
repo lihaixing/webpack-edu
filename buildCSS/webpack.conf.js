@@ -31,7 +31,7 @@ module.exports = {
                         {
                             loader: 'css-loader',
                             options: {
-                                minimize: true,
+                                // minimize: true,
                                 modules:true,
                                 // class命名规则
                                 localIdentName:'[path][name]_[local]_[hash:base64:5]'
@@ -80,7 +80,9 @@ module.exports = {
     },
     plugins: [
         new ExtractTextWebpackPlugin({
-            filename: '[name]Conf.min.css'
+            filename: '[name]Conf.min.css',
+            // 默认false 指打包初始化的import的css, 异步的不打包
+            // allChunks:true
         })
     ]
 }

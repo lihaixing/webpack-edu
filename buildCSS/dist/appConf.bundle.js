@@ -69,14 +69,16 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_base_css__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_base_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_base_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_common_css__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_common_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__css_common_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__less_main_less__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__less_main_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__less_main_less__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__b__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_base_css__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_base_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__css_base_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_common_css__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_common_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__css_common_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__less_main_less__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__less_main_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__less_main_less__);
 // import './css/base.css'
 // import './css/common.css'
+
 
 
 
@@ -93,24 +95,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // css模块化
 var module = document.getElementById('module');
-module.innerHTML = '<div class="' + __WEBPACK_IMPORTED_MODULE_0__css_base_css___default.a.box + '">你呀你</div>';
+module.innerHTML = '<div class="' + __WEBPACK_IMPORTED_MODULE_1__css_base_css___default.a.box + '">你呀你</div>';
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
-module.exports = {"box":"src-css-base_box_REzyU src-css-common_bigBox_27sNb"};
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_b_css__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_b_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_b_css__);
+
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"bigBox":"src-css-common_bigBox_27sNb"};
+module.exports = {"b":"src-css-b_b_33Wwv"};
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"box":"src-css-base_box_REzyU src-css-common_bigBox_27sNb"};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"bigBox":"src-css-common_bigBox_27sNb"};
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

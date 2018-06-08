@@ -1,1 +1,29 @@
-body{font-size:40px}.src-css-common_bigBox_27sNb{border:2px solid #000;color:#2e8b57}html{background:red}.src-css-base_box_REzyU{border-radius:4px;height:200px;width:200px;background:#ccc;color:red}body{font-size:40px}.src-css-common_bigBox_27sNb{border:2px solid #000;color:#2e8b57}.title{font-size:20px;font-weight:700;line-height:1.5}
+.src-css-b_b_33Wwv{
+    font-size: 28px;
+}/*common文件*/
+body{
+    font-size: 40px;
+}
+.src-css-common_bigBox_27sNb{
+    border:2px solid #000;
+    color:seagreen;
+}/*base文件*/
+html {
+    background: red;
+}
+.src-css-base_box_REzyU{
+    /*从其他文件继承样式，此代码会在base代码之前加载，所以要放在前面*/
+
+    border-radius:4px;
+    height: 200px;
+    width: 200px;
+    background:#ccc;
+    color:red;
+}/*common文件*/
+body{
+    font-size: 40px;
+}
+.src-css-common_bigBox_27sNb{
+    border:2px solid #000;
+    color:seagreen;
+}.title{font-size:20px;font-weight:700;line-height:1.5}
