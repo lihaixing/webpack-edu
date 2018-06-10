@@ -7,7 +7,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: './dist/',
-        filename: '[name]Conf.bundle.js'
+        filename: '[name]Conf.bundle.js',
+        chunkFilename:'[name]Conf.chunk.js'
     },
     module: {
         rules: [
@@ -82,7 +83,7 @@ module.exports = {
         new ExtractTextWebpackPlugin({
             filename: '[name]Conf.min.css',
             // 默认false 指打包初始化的import的css, 异步的不打包
-            // allChunks:true
+            allChunks:false
         })
     ]
 }

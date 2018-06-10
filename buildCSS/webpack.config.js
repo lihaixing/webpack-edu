@@ -1,4 +1,5 @@
 var path = require('path')
+var autoprefixer= require('autoprefixer')
 module.exports = {
     entry: {
         app: './src/app.js'
@@ -6,7 +7,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: './dist/',
-        filename: '[name].bundle.js'
+        filename: '[name].bundle.js',
+        chunkFilename:'[name].chunk.js'
     },
     module: {
         rules: [
@@ -32,6 +34,17 @@ module.exports = {
                             modules:true,
                             // class命名规则
                             localIdentName:'[path][name]_[local]_[hash:base64:5]'
+                        }
+                    },
+                      // postcss 放在css-loader之前
+                      {
+                        loader:'postcss-loader',
+                        options:{
+                            ident:'postcss',
+                            plugins:[
+                                // 可以放在最前面
+                                autoprefixer()
+                            ]
                         }
                     }
                 ]
@@ -59,6 +72,16 @@ module.exports = {
                             // modules:true,
                             // class命名规则
                             // localIdentName:'[path][name]_[local]_[hash:base64:5]'
+                        }
+                    },  // postcss 放在css-loader之前
+                    {
+                        loader:'postcss-loader',
+                        options:{
+                            ident:'postcss',
+                            plugins:[
+                                // 可以放在最前面
+                                autoprefixer()
+                            ]
                         }
                     },
                     {
