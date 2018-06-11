@@ -742,7 +742,7 @@ exports = module.exports = __webpack_require__(0)(false);
 exports.i(__webpack_require__(3), undefined);
 
 // module
-exports.push([module.i, "html{background:red;display:flex}.src-css-base_box_REzyU{border-radius:4px;height:200px;width:200px;background:#ccc;color:red}", ""]);
+exports.push([module.i, "html{background:red;display:-webkit-box;display:-ms-flexbox;display:flex}.src-css-base_box_REzyU{border-radius:4px;height:200px;width:200px;background:#ccc;color:red}", ""]);
 
 // exports
 exports.locals = {
@@ -969,7 +969,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, ".title {\n  font-size: 20px;\n  font-weight: bold;\n  line-height: 1.5;\n  border-radius: 5px;\n}\n", ""]);
+exports.push([module.i, ".title {\n  font-size: 20px;\n  font-weight: bold;\n  line-height: 1.5;\n  border-radius: 5px;\n  -webkit-transition: -webkit-transform 1s;\n  transition: -webkit-transform 1s;\n  transition: transform 1s;\n  transition: transform 1s, -webkit-transform 1s;\n}\n", ""]);
 
 // exports
 

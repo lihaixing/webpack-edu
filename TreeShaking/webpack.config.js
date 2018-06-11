@@ -1,4 +1,5 @@
 var path = require('path')
+var webpack = require('webpack')
 module.exports = {
     entry: {
         app: './src/app.js'
@@ -7,10 +8,41 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         publicPath: './dist/',
         filename: '[name].bundle.js',
-        chunkFilename:'[name].chunk.js'
+        chunkFilename: '[name].chunk.js'
     },
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['env'],
+                            plugins: ['plugin-lodash']
+                        }
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            minimize: true,
+                            modules: true,
+                            // class命名规则
+                            localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                        }
+                    },
+                    // postcss 放在css-loader之前
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: [
+                                require('postcss-cssnext')()
+                            ]
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.css$/,
                 use: [
@@ -30,19 +62,18 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             minimize: true,
-                            modules:true,
+                            modules: true,
                             // class命名规则
-                            localIdentName:'[path][name]_[local]_[hash:base64:5]'
+                            localIdentName: '[path][name]_[local]_[hash:base64:5]'
                         }
                     },
-                      // postcss 放在css-loader之前
-                      {
-                        loader:'postcss-loader',
-                        options:{
-                            ident:'postcss',
-                            plugins:[
-                                // 可以放在最前面
-                                require('autoprefixer')()
+                    // postcss 放在css-loader之前
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: [
+                                require('postcss-cssnext')()
                             ]
                         }
                     }
@@ -74,13 +105,10 @@ module.exports = {
                         }
                     },  // postcss 放在css-loader之前
                     {
-                        loader:'postcss-loader',
-                        options:{
-                            ident:'postcss',
-                            plugins:[
-                                // 可以放在最前面
-                                // require('autoprefixer')(),
-                                // css-next中已经包含了autoprefixer
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: [
                                 require('postcss-cssnext')()
                             ]
                         }
@@ -91,5 +119,9 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        // 无用js被去掉，同时代码被压缩
+        new webpack.optimize.UglifyJsPlugin()
+    ]
 }
