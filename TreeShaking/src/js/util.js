@@ -1,11 +1,11 @@
-export function apple () {
-    console.log('this is a')
+export function a () {
+    return 'this is a'
 }
 
 export function b () {
-    console.log('this is b')
+    return 'this is b'
 }
 
 export function c () {
-    console.log('this is c')
+    return 'this is c'
 }
