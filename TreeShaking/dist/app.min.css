@@ -1,0 +1,26 @@
+/*common文件*/
+
+body {
+  font-size: 40px;
+}
+
+/*base文件*/
+
+html {
+  background: red;
+  display: flex;
+}
+
+/*common文件*/
+
+body {
+  font-size: 40px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  border-radius: 5px;
+  transition: transform 1s;
+}
