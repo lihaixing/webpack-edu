@@ -14,6 +14,13 @@ module.exports = {
         filename: '[name].bundle.js',
         chunkFilename: '[name].chunk.js'
     },
+    // 目录解析
+    resolve: {
+        alias: {
+            // 加$表示解析的是一个文件名，而不是目录  这里告诉从哪里找jquery(默认是从node_modules中)
+            jquery$: path.resolve(__dirname, 'static/jquery.min.js')
+        }
+    },
     module: {
         rules: [
             {
@@ -119,7 +126,7 @@ module.exports = {
                     //     }
                     // },
                     {
-                        // base64
+                        // base64 url-loader包含了file-loader的功能
                         loader: 'url-loader',
                         options: {
                             // ext是后缀
@@ -142,6 +149,35 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(eot|woff2|woff|ttf|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            // ext是后缀
+                            name: '[name].min.[ext]',
+                            limit: 1000,
+                            // 绝对路径
+                            publicPath: '/webpack-edu/FileDeal/dist/fonts',
+                            useRelativePath: true,
+                            outputPath: '/'
+                        }
+                    }
+                ]
+            },
+            {
+                // 找到使用jquery模块 此处用法和 new webpack.ProvidePlugin 方法一致
+                test: path.resolve(__dirname, 'src/app.js'),
+                use: [
+                    {
+                        loader: 'imports-loader',
+                        options: {
+                            $: 'jquery'
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -159,6 +195,10 @@ module.exports = {
             ])
         }),
         // 无用js被去掉，同时代码被压缩
-        new webpack.optimize.UglifyJsPlugin()
+        new webpack.optimize.UglifyJsPlugin(),
+        // 通过npm install jquery时使用, js中也不需要再import；也可以通过本地引用，不过需要通过别名路径解析
+        // new webpack.ProvidePlugin({
+        //     $: 'jquery'
+        // })
     ]
 }
