@@ -12,7 +12,7 @@ module.exports={
                 // use:'babel-loader',
                 use:{
                     loader:'babel-loader',
-                    // options:{
+                    // options:{  //放在.babelrc中也可
                     //     presets:[
                     //         ['babel-preset-env',{
                     //         targets:{

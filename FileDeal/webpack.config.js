@@ -187,6 +187,7 @@ module.exports = {
             // 默认false 指打包初始化的import的css, 异步的不打包
             allChunks: false
         }),
+        // 只加载用到的样式
         new PurifyCss({
             paths: glob.sync([
                 path.join(__dirname, './*.html'),
