@@ -1,0 +1,15 @@
+/*base文件*/
+html {
+    background: green;
+    display: flex;
+}
+.box{
+    /*从其他文件继承样式，此代码会在base代码之前加载，所以要放在前面*/
+    composes: bigBox from './common.css';
+
+    border-radius:10px;
+    height: 300px;
+    width: 200px;
+    background:#ccc;
+    color:red;
+}
